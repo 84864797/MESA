@@ -1,0 +1,23 @@
+
+👉 Change the F7I98 card firmware IP address
+sudo mesaflash --device 7i98 --addr 192.168.1.121 --set ip=10.10.10.10
+
+
+###### When flashing the firmware, all six commands below must be executed in sequence. None of them can be omitted.########################
+###### 7i98_fallback” is the firmware file name to be flashed. Please modify it accordingly.############
+
+sudo mesaflash --device 7i98 --addr 10.10.10.10 --write 7i98_fallback.bit --fix --fallback			
+sudo mesaflash --device 7i98 --addr 10.10.10.10 --write 7i98_fallback.bit --fallback		
+sudo mesaflash --device 7i98 --addr 10.10.10.10 --reload --fallback  
+
+
+sudo mesaflash --device 7i98 --addr 10.10.10.10 --write 7i98_fallback.bit --fix 	
+sudo mesaflash --device 7i98 --addr 10.10.10.10 --write 7i98_fallback.bit 	
+
+sudo mesaflash --device 7i98 --addr 10.10.10.10 --reload   
+
+##################################################################################
+
+sudo mesaflash --device 7i98 --addr 10.10.10.10 --verbose	Query F7I98 card information
+
+sudo mesaflash --device 7i98 --addr 10.10.10.10 --readhmid	Query GPIO information of the 7I98 card
