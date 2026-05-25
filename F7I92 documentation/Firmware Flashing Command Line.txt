@@ -1,0 +1,13 @@
+
+
+
+
+Execute the commands 1, 2, and 3 in sequence.
+To flash a different firmware, replace the firmware name in the commands with the firmware you want to flash.
+The following commands flash the firmware named 7i92_fallback.bit.
+
+  1	sudo mesaflash --device 7i92 --addr 10.10.10.10 --write 7i92_fallback.bit --fix --fallback	
+  2	sudo mesaflash --device 7i92 --addr 10.10.10.10 --write 7i92_fallback.bit --fallback		
+  3	sudo mesaflash --device 7i92 --addr 10.10.10.10 --reload --fallback  
+ 
+

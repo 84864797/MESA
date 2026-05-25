@@ -1,0 +1,12 @@
+To optimize jitter issues in LinuxCNC, consider the following aspects:
+
+Real-time Kernel: Using a real-time kernel can provide better real-time performance. Linux distributions such as Ubuntu offer dedicated real-time kernels, such as the PREEMPT-RT kernel or Xenomai kernel. Installing and switching to a real-time kernel may help reduce jitter.
+IRQ Affinity: Binding the interrupt requests (IRQs) of the CNC control card to specific CPU cores can reduce competition for interrupt handling and minimize jitter. Tools such as irqbalance or irqsettle can be used to set IRQ affinity.
+Disable Power-saving Features: Disable CPU power-saving features, such as Intel SpeedStep or AMD Cool’n’Quiet, to ensure the CPU runs at maximum performance during operation, which can reduce jitter.
+Optimize BIOS Settings: Some BIOS settings may affect real-time performance. Make sure to enable options related to real-time operation, such as disabling C-states or enabling HPET (High Precision Event Timer).
+Real-time Priority: Set the LinuxCNC process to real-time priority to ensure it has higher scheduling precedence. The chrt command can be used to set real-time priority.
+Hardware Optimization: Check and optimize hardware configurations, including power quality, cable connections, and grounding. Ensure stable power, proper grounding, and minimize electromagnetic interference.
+
+Note: Before performing any optimizations, be sure to back up important data and configuration files, and proceed carefully to avoid unnecessary risks. It is also recommended to consult the official LinuxCNC documentation and user community for more detailed optimization advice and guidance.
+
+
